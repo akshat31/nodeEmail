@@ -20,7 +20,7 @@ app.post('/contact',(req , res)=>{
         secure: false,
         auth: {
           user:process.env.EMAIL, 
-          pass:Process.env.PASS 
+          pass:process.env.PASS 
         },
         tls:{
           rejectUnauthorized:false
