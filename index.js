@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 require('dotenv').config()
 
 app.get('/',(req , res)=>{
-    res.send("hello friends")
+    res.send(process.env.EMAIL)
 })
 
 
@@ -45,12 +45,9 @@ app.post('/contact',(req , res)=>{
         if(error){
           console.log(error)
         }
+	        console.log("Message sent: %s", info);
       })
-
-    console.log("Message sent: %s", info);
-})
-
-
+    })
 
 app.listen(port, () =>{
     console.log("server started")
