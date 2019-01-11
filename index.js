@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
@@ -51,6 +52,6 @@ app.post('/contact',(req , res)=>{
 
 
 
-app.listen(4000, () =>{
+app.listen(port, () =>{
     console.log("server started")
 })
