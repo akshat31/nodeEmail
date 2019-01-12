@@ -45,8 +45,10 @@ app.post('/contact',(req , res)=>{
         if(error){
           console.log(error)
         }
-	        console.log("Message sent: %s", info);
+          console.log("Message sent: %s", info);
+          res.send("mail sent")
       })
+      res.send("email sent")
     })
 
 app.listen(port, () =>{
